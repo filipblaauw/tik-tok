@@ -33,12 +33,12 @@ Based on [Tik Tok](https://github.com/datanews/tik-tok)
 ```
 You can change the title and source in the script tag at the end of the code.
 
-Spreadsheet should have the following columns: date, dateDisplay, title, body, escenic, video, source, article
-date: `YYYY-MM-DD HH:MM:SS`
-dateDisplay: How date should be displayed. Examples: `DD. MMM, YYYY` or `DD. MMM, YYYY, HH:mm`
-title: Heading in each entry
-body: Text in each entry. Can contain html such as links.
-escenic: ID of the image from Escenic, 123456
-video: ID of the video from CMS, 123456
-source: Caption text to the image or video
-article: ID to the read more article. When added, a read more link appears in entry.
+Spreadsheet should have the following columns:
+* date: `YYYY-MM-DD HH:MM:SS`
+* dateDisplay: How date should be displayed. Examples: `DD. MMM, YYYY` or `DD. MMM, YYYY, HH:mm`
+* title: Heading in each entry
+* body: Text in each entry. Can contain html such as links.
+* escenic: ID of the image from Escenic, `123456`
+* video: ID of the video from CMS, `123456`
+* source: Caption text to the image or video
+* article: ID to the read more article. When added, a read more link appears in entry.
