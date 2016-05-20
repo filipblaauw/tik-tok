@@ -15,7 +15,7 @@ Based on [Tik Tok](https://github.com/datanews/tik-tok)
 
 <script src="http://mm.aftenbladet.no/2016/tik-tok/bower_components/underscore/underscore.js"></script>
 <script src="http://mm.aftenbladet.no/2016/tik-tok/bower_components/moment/moment.js"></script>
-<script src="http://mm.aftenbladet.no/2016/tik-tok/ajax/libs/moment.js/2.13.0/locale/nb.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/locale/nb.js"></script>
 
 <script src="http://mm.aftenbladet.no/2016/tik-tok/dist/tik-tok.min.js"></script>
 
