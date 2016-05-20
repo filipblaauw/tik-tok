@@ -38,7 +38,7 @@
   // Default options
   var defaultOptions = {
     // Date formats used by moment
-    dateFormat: ['MMM DD, YYYY', 'MM/DD/YYYY', 'M/D/YYYY', 'DD MMM YYYY', 'YYYY-MM-DD', 'YYYY-MM-DD HH:mm:ss'],
+    dateFormat: ['MMM DD, YYYY', 'MM/DD/YYYY', 'M/D/YYYY', 'DD MMM YYYY', 'DD/MM/YYYY', 'YYYY-MM-DD', 'YYYY-MM-DD HH:mm:ss'],
 
     // Date display format
     dateDisplay: 'MMM DD, YYYY',
@@ -55,7 +55,7 @@
 
     // Template.  This can be a function or string and the default will
     // be replace in the build process
-    template: '<div class="tik-tok-container tt-bg-color">  <div class="tt-progress-bar">  <div class="tt-progress"></div>  </div>   <% if (typeof title !== \'undefined\' && title) { %>  <div class="tt-header tt-header-color cf">  <div class="tt-label">Timeline:</div>   <div class="tt-title"><%= title %></div>  </div>  <% } %>   <div class="tt-spine-background">  <div class="tt-spine tt-spine-color"></div>  </div>   <div class="tt-spine-end tt-spine-top tt-header-color">  <div><div class="tt-spine-point tt-spine-color"></div></div>  <div><div class="tt-spine tt-spine-color"></div></div>  </div>   <div class="tt-groups">  <% _.forEach(groups, function(g, gi) { %>  <div class="tt-group">  <div class="tt-group-label-wrapper">  <div class="tt-group-label tt-spine-color">  <%= g.display %>  </div>  </div>   <div class="tt-entries">  <% _.forEach(g.entries, function(e, ei) { %>  <div class="tt-entry" id="<%= tiktok.id %>-<%= e.id %>">  <!-- Need to re-think the link field  <a class="tt-entry-link" href="#<%= tiktok.id %>-<%= e.id %>">link</a>  -->   <div class="tt-entry-date"><%= e.dateFormatted %></div>   <% if (e.title) { %>  <h3 class="tt-entry-title"><%= e.title %></h3>  <% } %>   <div class="tt-entry-content-wrapper cf">  <% if (e.media) { %>  <div class="tt-entry-media-wrapper <% if (e.body) { %>with-body<% } %>">  <div class="tt-entry-media <% if (e.source) { %>with-source<% } %>">  <% if (e.type === \'youtube\') { %>  <iframe class="tt-entry-media-youtube" width="100%" height="350" src="<%= e.media %>" frameborder="0" allowfullscreen></iframe>   <% } else if (e.type === \'soundcloud_large\') { %>  <iframe class="tt-entry-media-soundcloud" width="100%" height="350" scrolling="no" frameborder="no" src="<%= e.media %>"></iframe>   <% } else if (e.type === \'soundcloud\') { %>  <iframe class="tt-entry-media-soundcloud" width="100%" height="166" scrolling="no" frameborder="no" src="<%= e.media %>"></iframe>   <% } else if (e.type === \'embed\') { %>  <iframe class="tt-entry-media-embed" width="100%" height="350" scrolling="no" frameborder="no" src="<%= e.media %>"></iframe>   <% } else { %>  <img class="tt-entry-media-image" src="<%= e.media %>">  <% } %>  </div>   <% if (e.source) { %>  <div class="tt-entry-source">  <%= e.source %>  </div>  <% } %>  </div>  <% } %>   <% if (e.body) { %>  <div class="tt-entry-body-wrapper <% if (e.media) { %>with-media<% } %>">  <div class="tt-entry-body"><%= e.body %></div>  </div>  <% } %>  </div>  </div>  <% }) %>  </div>  </div>  <% }) %>  </div>   <div class="tt-spine-end tt-spine-bottom tt-bg-color">  <div><div class="tt-spine-point tt-spine-color"></div></div>  </div> </div> '
+    template: '<div class="tik-tok-container tt-bg-color">  <div class="tt-progress-bar">  <div class="tt-progress"></div>  </div>   <% if (typeof title !== \'undefined\' && title) { %>  <div class="tt-header tt-header-color cf">  <div class="tt-title"><%= title %></div>  </div>  <% } %>    <div class="tt-spine-background">  <div class="tt-spine tt-spine-color"></div>  </div>   <div class="tt-spine-end tt-spine-top tt-header-color">  <div><div class="tt-spine-point tt-spine-color"></div></div>  <div><div class="tt-spine tt-spine-color"></div></div>  </div>   <div class="tt-groups">  <% _.forEach(groups, function(g, gi) { %>  <div class="tt-group">  <div class="tt-group-label-wrapper">  <div class="tt-group-label tt-spine-color">  <%= g.display %>  </div>  </div>   <div class="tt-entries">  <% _.forEach(g.entries, function(e, ei) { %>  <div class="tt-entry" id="<%= tiktok.id %>-<%= e.id %>">  <div class="tt-entry-date"><%= e.dateFormatted %></div>   <% if (e.title) { %>  <h3 class="tt-entry-title"><%= e.title %></h3>  <% } %>   <div class="tt-entry-content-wrapper cf">  <% if (e.media) { %>  <div class="tt-entry-media-wrapper <% if (e.body) { %>with-body<% } %>">  <div class="tt-entry-media <% if (e.source) { %>with-source<% } %>">  <% if (e.type === \'youtube\') { %>  <iframe class="tt-entry-media-youtube" width="100%" height="350" src="<%= e.media %>" frameborder="0" allowfullscreen></iframe>   <% } else if (e.type === \'soundcloud_large\') { %>  <iframe class="tt-entry-media-soundcloud" width="100%" height="350" scrolling="no" frameborder="no" src="<%= e.media %>"></iframe>   <% } else if (e.type === \'soundcloud\') { %>  <iframe class="tt-entry-media-soundcloud" width="100%" height="166" scrolling="no" frameborder="no" src="<%= e.media %>"></iframe>   <% } else if (e.type === \'tv\') { %>  <iframe class="tt-entry-media-soundcloud" width="100%" height="350" scrolling="no" frameborder="no" src="<%= e.media %>"></iframe>   <% } else if (e.type === \'embed\') { %>  <iframe class="tt-entry-media-embed" width="100%" height="350" scrolling="no" frameborder="no" src="<%= e.media %>"></iframe>   <% } else { %>  <img class="tt-entry-media-image" src="<%= e.media %>">  <% } %>  </div>   <% if (e.source) { %>  <div class="tt-entry-source">  <%= e.source %>  </div>  <% } %>  </div>  <% } %>  <% if (e.escenic) { %>  <div class="tt-entry-media-wrapper <% if (e.body) { %>with-body<% } %>">  <div class="tt-entry-media <% if (e.source) { %>with-source<% } %>">  <img class="tt-entry-media-image" src="http://sa.mnocdn.no/incoming/article<%= e.escenic %>.ece/ALTERNATES/w580c169/">  </div>   <% if (e.source) { %>  <div class="tt-entry-source">  <%= e.source %>  </div>  <% } %>  </div>  <% } %>  <% if (e.video) { %>  <div class="tt-entry-source videoWrapper">  <iframe src="//www.aftenbladet.no/tv/embed/?id=<%= e.video %>" frameborder="0" allowfullscreen="true"></iframe>  </div>  <% } %>   <% if (e.body) { %>  <div class="tt-entry-body-wrapper <% if (e.media) { %>with-media<% } %>">  <div class="tt-entry-body"><%= e.body %></div>  </div>  <% } %>   <% if (e.article) { %>  <div class="tt-entry-readmore">  <a href="http://www.aftenbladet.no/article/sa-<%= e.article %>.html">Les saken</a>  </div>  <% } %>  </div>  </div>  <% }) %>  </div>  </div>  <% }) %>  </div>  </div> <% if (typeof kilde !== \'undefined\' && kilde) { %>  <div class="tik-tok-footer">  <div class="tt-kilde">Kilde(r): <%= kilde %></div>  </div> <% } %> '
   };
 
   // Constructor.  This just calls the update function.
@@ -240,6 +240,7 @@
         _: _,
         groups: this.groups,
         title: this.options.title,
+        kilde: this.options.kilde,
         tiktok: this
       });
 
@@ -445,7 +446,7 @@
         id: entry.date.format('YYYY-MM-DD-HH'),
         date: moment(entry.date.format('YYYY-MM-DD-HH'), 'YYYY-MM-DD-HH'),
         display: moment(entry.date.format('YYYY-MM-DD-HH'), 'YYYY-MM-DD-HH')
-          .format((groupByDisplay) ? groupByDisplay : 'h a')
+          .format((groupByDisplay) ? groupByDisplay : 'HH:mm')
       };
     },
 
@@ -560,12 +561,16 @@
         return 'soundcloud';
       }
 
+      else if (url.indexOf('aftenbladet.no') !== -1) {
+        return 'tv';
+      }
+
       // General embed/iframe
       else if (url.indexOf('embed') !== -1 || url.indexOf('iframe') !== -1) {
         return 'embed';
       }
 
-      // Image
+      // Escenic
       else {
         return 'image';
       }

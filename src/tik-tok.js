@@ -32,7 +32,7 @@
   // Default options
   var defaultOptions = {
     // Date formats used by moment
-    dateFormat: ['MMM DD, YYYY', 'MM/DD/YYYY', 'M/D/YYYY', 'DD MMM YYYY', 'YYYY-MM-DD', 'YYYY-MM-DD HH:mm:ss'],
+    dateFormat: ['MMM DD, YYYY', 'MM/DD/YYYY', 'M/D/YYYY', 'DD MMM YYYY', 'DD/MM/YYYY', 'YYYY-MM-DD', 'YYYY-MM-DD HH:mm:ss'],
 
     // Date display format
     dateDisplay: 'MMM DD, YYYY',
@@ -234,6 +234,7 @@
         _: _,
         groups: this.groups,
         title: this.options.title,
+        kilde: this.options.kilde,
         tiktok: this
       });
 
@@ -439,7 +440,7 @@
         id: entry.date.format('YYYY-MM-DD-HH'),
         date: moment(entry.date.format('YYYY-MM-DD-HH'), 'YYYY-MM-DD-HH'),
         display: moment(entry.date.format('YYYY-MM-DD-HH'), 'YYYY-MM-DD-HH')
-          .format((groupByDisplay) ? groupByDisplay : 'h a')
+          .format((groupByDisplay) ? groupByDisplay : 'HH:mm')
       };
     },
 
@@ -554,12 +555,16 @@
         return 'soundcloud';
       }
 
+      else if (url.indexOf('aftenbladet.no') !== -1) {
+        return 'tv';
+      }
+
       // General embed/iframe
       else if (url.indexOf('embed') !== -1 || url.indexOf('iframe') !== -1) {
         return 'embed';
       }
 
-      // Image
+      // Escenic
       else {
         return 'image';
       }

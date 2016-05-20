@@ -1,36 +1,48 @@
 
 // Variables
-@font-header: Lato, Helvetica, Arial, sans-serif;
+@font-header: Helvetica, Arial, sans-serif;
 @font-content: Georgia, serif;
 @font-mono: monospace;
 
 @color-default: #565656;
-@bg-color-default: #FF6666;
-@bg-color-header: #232323;
-@color-header: #FFFFFF;
-@bg-color-grouping: #FFCC00;
-@color-grouping: #232323;
+@bg-color-default: transparent;
+@bg-color-header: #f8f8f8;
+@color-header: #565656;
+@bg-color-grouping: #ccc;
+@bg-color-label: #369;
+@color-grouping: #FFFFFF;
 @bg-color-entry: #FFFFFF;
-@color-date: #FF6666;
+@color-date: #888;
 @color-source: #8B8B8B;
 @color-link: #FFFFFF;
-@bg-color-link: #E51133;
-@color-body-link: #E51133;
+@bg-color-link: #369;
+@bg-color-link-hover: #7699BB;
+@color-body-link: #369;
 @bg-color-progress-bar: #565656;
-@bg-color-progress: #FFCC00;
+@bg-color-progress: #336699;
 
-@spine-width: 4px;
+@spine-width: 2px;
 
 @width-medium: 600px;
 
 // Mobile first, meaning original styles are for mobiles and
 // we make changes as the screen gets larger.
 
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #f8f8f8;
+}
+
+.tik-tok-tidslinje {
+  width: 100%;
+  margin: 0 auto;
+}
+
 .tik-tok-container {
   position: relative;
-  width: 95%;
-  max-width: 70em;
-  margin: 0 auto 2em auto;
+  //width: 95%;
+  margin: 0 -20px;
   font-family: @font-header;
   color: @color-default;
   box-sizing: border-box;
@@ -63,7 +75,7 @@
     position: relative;
     z-index: 10;
     padding-top: 1.5em;
-    font-family: @font-header;
+    font-family: @font-content;
     text-align: center;
 
     .tt-label {
@@ -72,8 +84,9 @@
     }
 
     .tt-title {
-      margin-bottom: 0.5em;
+      //margin-bottom: 0em;
       font-size: 2em;
+      font-weight: bold;
     }
   }
 
@@ -118,8 +131,8 @@
 
     .tt-spine-point {
       display: inline-block;
-      width: @spine-width * 4;
-      height: @spine-width * 4;
+      width: @spine-width * 6;
+      height: @spine-width * 6;
       padding: 0;
       margin: 0;
       border-radius: 50%;
@@ -128,13 +141,13 @@
     .tt-spine {
       display: inline-block;
       width: @spine-width;
-      height: 2em;
+      height: 1em;
       padding: 0;
       margin: 0;
     }
 
     &.tt-spine-top {
-      padding-top: 2em;
+      padding-top: 1em;
 
       .tt-spine-point {
         margin-bottom: -1px;
@@ -160,25 +173,33 @@
 
     .tt-group-label {
       display: inline-block;
-      padding: 0.5em 1em;
-      margin: 0 auto 1em auto;
+      padding: 0.3em 0.8em;
+      margin: 1em auto 1em auto;
+      text-transform: uppercase;
+      background-color: @bg-color-grouping;
+      border-radius: 3px;
     }
   }
 
   .tt-entries {
-    padding: 0 1em 1em 1em;
+    padding: 0;
     margin-bottom: 1em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   }
 
   .tt-entry {
     padding: 1em;
     margin-bottom: 1em;
+    line-height: 1.4;
     background-color: @bg-color-entry;
+
 
     .tt-entry-date {
       margin-bottom: 1em;
-      font-size: 0.85em;
+      font-family: @font-header;
+      font-size: 0.7em;
       color: @color-date;
+      text-align: center;
       text-transform: uppercase;
     }
 
@@ -202,6 +223,7 @@
     .tt-entry-title {
       padding: 0;
       margin: 0 0 0.75em 0;
+      font-family: @font-content;
       font-size: 1.5em;
       font-weight: normal;
     }
@@ -211,10 +233,10 @@
     }
 
     .tt-entry-media {
-      margin: 0 -1em 0 -1em;
+      //margin: 0 -1em 0 -1em;
 
       &.with-source {
-        margin-bottom: 0.5em;
+        //margin-bottom: 0.5em;
       }
 
       img {
@@ -226,6 +248,43 @@
       font-family: @font-content;
       font-size: 0.85em;
       color: @color-source;
+    }
+
+    .tt-entry-readmore {
+      display: block;
+      margin-top: 10px;
+      clear: both;
+      text-align: center;
+      cursor: pointer;
+
+      a, a:visited {
+        padding: .2em 1em;
+        font-family: @font-header;
+        font-size: .9em;
+        color: @color-link;
+        text-decoration: none;
+        background-color: @bg-color-link;
+        border-radius: 3px;
+      }
+      a:hover {
+        background-color: @bg-color-link-hover;
+      }
+    }
+
+    .videoWrapper {
+    	position: relative;
+      height: 0;
+      padding-top: 18px;
+    	padding-bottom: 56.25%; /* 16:9 */
+      margin: 0 -15px 20px -15px;
+
+      iframe {
+      	position: absolute;
+      	top: 0;
+      	left: 0;
+      	width: 100%;
+      	height: 100%;
+      }
     }
 
     .tt-entry-body {
@@ -283,6 +342,8 @@
         float: right;
       }
 
+
+
       .tt-entry-media-wrapper.with-body {
         margin-bottom: 0;
         padding-left: 1em;
@@ -298,7 +359,7 @@
       }
 
       .tt-entry-source {
-        margin-bottom: 0;
+        margin-bottom: 10px;
       }
     }
   }
@@ -325,5 +386,25 @@
       background-color: @bg-color-progress;
       transition: width 200ms linear;
     }
+  }
+}
+.tik-tok-footer {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+
+  .tt-kilde {
+    //margin-bottom: 0em;
+    font-family: @font-header;
+    font-size: .8em;
+    color: @color-source;
+  }
+}
+@media (min-width: @width-medium) {
+  .tik-tok-container {
+    font-size: .8em;
+  }
+  .tik-tok-container .tt-entry {
+    padding: 1em 2em;
   }
 }
