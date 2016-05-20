@@ -18,23 +18,6 @@
     "email": "apalzzolo@wnyc.org",
     "url": "http://wnyc.org"
   },
-  "contributors": [
-    {
-      "name": "Noah Veltman",
-      "email": "nveltman@wnyc.org",
-      "url": "http://wnyc.org"
-    },
-    {
-      "name": "Chris Keller",
-      "email": "ckeller@scpr.org",
-      "url": "http://scpr.org"
-    },
-    {
-      "name": "John Keefe",
-      "email": "jkeefe@wnyc.org",
-      "url": "http://wnyc.org"
-    }
-  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/datanews/tik-tok/issues"
