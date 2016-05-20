@@ -25,7 +25,7 @@ Based on [Tik Tok](https://github.com/datanews/tik-tok)
     var tikTok = new TikTok({
       el: '#tik-tok',
       title: 'Nyhetsdøgnet',
-      kilde: 'Kilde'
+      kilde: 'Kilde',
       entries: data.tidslinje
     });
   });
